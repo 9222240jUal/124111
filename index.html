@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kuhring Stillberatung | Birgit Kuhring – Beratung für Stillzeit &amp; frühe Elternschaft</title>
 <meta name="description" content="Einfühlsame Beratung und Unterstützung für Familien rund um Stillen, Bindung, frühe Kindheit und Kleinkindentwicklung. Persönlich, kompetent und auf Augenhöhe – von Birgit Kuhring.">
-<meta name="theme-color" content="#2c4a52">
+<meta name="theme-color" content="#3f6b54">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kuhring Stillberatung | Birgit Kuhring">
 <meta property="og:description" content="Einfühlsame Beratung für Familien rund um Stillen, Bindung und frühe Kindheit.">
 <meta property="og:locale" content="de_DE">
+<meta property="og:image" content="assets/logo-full.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232c4a52'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='%23f6efe6' font-family='Georgia, serif'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +26,22 @@
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
+<!-- Reusable decorative leaf branch (referenced via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="leaf-branch" viewBox="0 0 200 200">
+    <path d="M20 185 C 55 150, 78 105, 98 20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="52" cy="152" rx="19" ry="9" transform="rotate(-42 52 152)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <ellipse cx="68" cy="122" rx="18" ry="9" transform="rotate(-36 68 122)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <ellipse cx="82" cy="92" rx="16" ry="8" transform="rotate(-30 82 92)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <ellipse cx="92" cy="63" rx="14" ry="7" transform="rotate(-24 92 63)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <ellipse cx="98" cy="36" rx="12" ry="6" transform="rotate(-18 98 36)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+  </symbol>
+</svg>
+
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="#hero" class="logo">
-      <span class="logo-mark" aria-hidden="true">K</span>
+      <img src="assets/logo-mark.png" alt="Kuhring Stillberatung" class="logo-img">
       <span class="logo-text">Kuhring<br><small>Stillberatung</small></span>
     </a>
 
@@ -36,6 +49,7 @@
       <ul>
         <li><a href="#ueber-mich">Über mich</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#preise">Preise</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#referenzen">Stimmen</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -55,6 +69,9 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <svg class="floating-leaf leaf-1" data-parallax="0.15"><use href="#leaf-branch"/></svg>
+    <svg class="floating-leaf leaf-2" data-parallax="0.3"><use href="#leaf-branch"/></svg>
+
     <div class="container hero-inner">
       <div class="hero-text">
         <p class="eyebrow">Zertifizierte Stillberatung &amp; Elternbegleitung</p>
@@ -71,44 +88,51 @@
         <ul class="hero-trust">
           <li>Persönlich &amp; einfühlsam</li>
           <li>Hausbesuche &amp; Online-Beratung</li>
-          <li>Fundiertes Fachwissen</li>
+          <li>DAIS-zertifizierte Stillbegleiterin</li>
         </ul>
       </div>
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual" data-parallax="0.08">
         <div class="hero-blob"></div>
-        <div class="hero-photo-placeholder">
-          <span>Foto von<br>Birgit Kuhring</span>
-        </div>
+        <img src="assets/logo-full.png" alt="Kuhring Stillberatung – Logo: Mutter stillt ihr Baby" class="hero-logo">
       </div>
     </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C 360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="var(--color-bg-alt)"/>
+    </svg>
   </section>
 
   <!-- ÜBER MICH -->
   <section class="section" id="ueber-mich">
     <div class="container about-inner">
-      <div class="about-photo">
-        <div class="photo-frame">BK</div>
+      <div class="about-photo" data-parallax="0.06">
+        <div class="photo-frame">
+          <span class="photo-frame-initials">BK</span>
+        </div>
+        <svg class="floating-leaf leaf-3" data-parallax="0.2"><use href="#leaf-branch"/></svg>
       </div>
       <div class="about-text">
         <p class="eyebrow">Über mich</p>
         <h2>Birgit Kuhring</h2>
         <p>
-          Ich begleite Familien in einer der prägendsten Phasen ihres Lebens –
-          von der Schwangerschaft über den Stillstart bis in die ersten Jahre
-          mit einem Kleinkind. Mein Ziel ist es, Ihnen mit fundiertem Wissen,
-          Geduld und einem offenen Ohr Sicherheit zu geben, damit Sie Ihren
-          eigenen Weg als Familie finden können.
+          Mein Name ist Birgit Kuhring, ich wurde 1974 geboren, bin Mutter von
+          drei Kindern und inzwischen auch stolze Großmutter von zwei
+          Enkelkindern. Durch meine eigenen Erfahrungen in Schwangerschaft,
+          Stillzeit und Erziehung habe ich früh gespürt, wie wertvoll
+          einfühlsame Begleitung in dieser Lebensphase ist.
         </p>
         <p>
-          Dabei ist mir wichtig, jede Familie individuell zu betrachten: Es gibt
-          nicht die eine richtige Lösung, sondern nur die, die zu Ihnen und
-          Ihrem Kind passt. Ich nehme mir Zeit, höre zu und stehe Ihnen mit
-          praktischen wie emotionalen Ratschlägen zur Seite.
+          Ich bin ausgebildete DAIS-Stillbegleiterin, Kleinkindpädagogin und
+          staatlich anerkannte Erzieherin. Mit viel Herz und Fachwissen
+          unterstütze ich Familien rund um die Themen Stillen, Bindung und
+          frühe Kindheit. Mein Anliegen ist es, Mütter und Familien in dieser
+          besonderen Zeit zu stärken – mit Verständnis, Geduld und
+          praktischen Lösungen, die zu Ihnen passen.
         </p>
         <ul class="about-facts">
-          <li>Ausbildung &amp; Zertifizierung im Bereich Stillberatung</li>
-          <li>Erfahrung in der Begleitung von Familien mit Neugeborenen und Kleinkindern</li>
-          <li>Fortlaufende Weiterbildung zu Bindung und früher Kindheit</li>
+          <li>Ausgebildete DAIS-Stillbegleiterin</li>
+          <li>Kleinkindpädagogin</li>
+          <li>Staatlich anerkannte Erzieherin</li>
         </ul>
       </div>
     </div>
@@ -129,7 +153,9 @@
 
       <div class="card-grid">
         <article class="card">
-          <div class="card-icon" aria-hidden="true">🤱</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M18 8c4 0 6 3 6 3s2-3 6-3c5 0 8 4 8 9 0 8-9 14-14 19-5-5-14-11-14-19 0-5 3-9 8-9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Stillberatung</h3>
           <p>
             Unterstützung beim Stillstart, bei Stillproblemen, Milchbildung oder
@@ -138,7 +164,9 @@
         </article>
 
         <article class="card">
-          <div class="card-icon" aria-hidden="true">💛</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="7" stroke="currentColor" stroke-width="2"/><path d="M10 40c0-8 6-14 14-14s14 6 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 26v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
           <h3>Bindung &amp; Beziehung</h3>
           <p>
             Beratung zu sicherer Bindung, Nähe und Urvertrauen – für einen
@@ -147,7 +175,9 @@
         </article>
 
         <article class="card">
-          <div class="card-icon" aria-hidden="true">🌱</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 42V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c0-8-8-8-14-8 0 8 6 12 14 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 18c0-7 7-8 12-8 0 7-5 11-12 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Kleinkindentwicklung</h3>
           <p>
             Begleitung durch die ersten Lebensjahre: Entwicklungsschritte,
@@ -156,7 +186,9 @@
         </article>
 
         <article class="card">
-          <div class="card-icon" aria-hidden="true">🏡</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 24 24 10l16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 21v16h22V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 37v-9h8v9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Hausbesuche</h3>
           <p>
             Beratung in Ihrer vertrauten Umgebung – entspannt, persönlich und
@@ -165,7 +197,9 @@
         </article>
 
         <article class="card">
-          <div class="card-icon" aria-hidden="true">💻</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="12" width="34" height="21" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 38h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="21" r="4.5" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
           <h3>Online-Beratung</h3>
           <p>
             Flexible Beratung per Video-Call – ideal für schnelle Fragen oder
@@ -174,7 +208,9 @@
         </article>
 
         <article class="card">
-          <div class="card-icon" aria-hidden="true">👨‍👩‍👧</div>
+          <span class="card-icon icon-draw" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6c7 6 10 13 10 20a10 10 0 0 1-20 0c0-7 3-14 10-20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 20v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
           <h3>Vorbereitung in der Schwangerschaft</h3>
           <p>
             Informationen und Austausch schon vor der Geburt, damit Sie gut
@@ -183,10 +219,37 @@
         </article>
       </div>
     </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,60 C 400,0 1040,100 1440,30 L1440,100 L0,100 Z" fill="var(--color-bg)"/>
+    </svg>
+  </section>
+
+  <!-- PREISE -->
+  <section class="section" id="preise">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Preise</p>
+        <h2>Transparent &amp; fair</h2>
+      </div>
+
+      <div class="price-card">
+        <svg class="floating-leaf leaf-price" data-parallax="0.12"><use href="#leaf-branch"/></svg>
+        <div class="price-main">
+          <span class="price-amount">60&nbsp;€</span>
+          <span class="price-detail">Beratung rund um Stillen &amp; Kleinkindentwicklung<br>60 Minuten</span>
+        </div>
+        <ul class="price-list">
+          <li><span>Jede weitere 15 Minuten</span><strong>10&nbsp;€</strong></li>
+          <li><span>Nachbetreuung per WhatsApp</span><strong>kostenlos</strong></li>
+          <li><span>Anfahrt zum Hausbesuch</span><strong>0,50&nbsp;€ / km (Hin- &amp; Rückfahrt)</strong></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- ABLAUF -->
-  <section class="section" id="ablauf">
+  <section class="section section-alt" id="ablauf">
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Ablauf</p>
@@ -212,14 +275,14 @@
         <li class="step">
           <span class="step-number">4</span>
           <h3>Begleitung</h3>
-          <p>Bei Bedarf begleite ich Sie über den ersten Termin hinaus weiter.</p>
+          <p>Bei Bedarf begleite ich Sie über den ersten Termin hinaus per WhatsApp weiter.</p>
         </li>
       </ol>
     </div>
   </section>
 
   <!-- REFERENZEN -->
-  <section class="section section-alt" id="referenzen">
+  <section class="section" id="referenzen">
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Stimmen</p>
@@ -244,10 +307,14 @@
         </blockquote>
       </div>
     </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C 360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="var(--color-bg-alt)"/>
+    </svg>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section section-alt" id="faq">
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Häufige Fragen</p>
@@ -295,8 +362,8 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
-            <p>Ein Beratungstermin dauert in der Regel 60 bis 90 Minuten,
-            abhängig von Ihrem individuellen Anliegen.</p>
+            <p>Ein Beratungstermin dauert in der Regel 60 Minuten. Bei Bedarf
+            kann er in 15-Minuten-Schritten verlängert werden.</p>
           </div>
         </div>
       </div>
@@ -304,7 +371,7 @@
   </section>
 
   <!-- KONTAKT -->
-  <section class="section section-alt" id="kontakt">
+  <section class="section" id="kontakt">
     <div class="container contact-inner">
       <div class="contact-info">
         <p class="eyebrow">Kontakt</p>
@@ -317,15 +384,15 @@
         <ul class="contact-details">
           <li>
             <strong>Telefon</strong>
-            <a href="tel:+491234567890">+49 123 4567890</a>
+            <a href="tel:+4915757180990">0157 57180990</a>
           </li>
           <li>
             <strong>E-Mail</strong>
             <a href="mailto:info@kuhring-stillberatung.de">info@kuhring-stillberatung.de</a>
           </li>
           <li>
-            <strong>Standort</strong>
-            <span>Musterstraße 1, 12345 Musterstadt</span>
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/still.beratung" target="_blank" rel="noopener">@still.beratung</a>
           </li>
           <li>
             <strong>Erreichbarkeit</strong>
@@ -334,7 +401,12 @@
         </ul>
       </div>
 
-      <form class="contact-form" id="contact-form" novalidate>
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@kuhring-stillberatung.de" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Neue Anfrage über die Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required autocomplete="name">
@@ -357,7 +429,9 @@
             Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden.
           </label>
         </div>
-        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+        <button type="submit" class="btn btn-primary">
+          <span class="btn-label">Nachricht senden</span>
+        </button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -368,9 +442,12 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <span class="logo-mark" aria-hidden="true">K</span>
+      <img src="assets/logo-mark-cream.png" alt="Kuhring Stillberatung" class="footer-logo-img">
       <span>Kuhring Stillberatung</span>
     </div>
+    <a class="footer-social" href="https://instagram.com/still.beratung" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+    </a>
     <nav class="footer-nav" aria-label="Rechtliches">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>

@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // ---------- Sticky header shadow ----------
   var header = document.getElementById("site-header");
   function onScroll() {
@@ -37,7 +39,7 @@
 
   // ---------- Scroll reveal animations ----------
   var revealTargets = document.querySelectorAll(
-    ".hero-text, .hero-visual, .about-photo, .about-text, .card, .step, .testimonial, .faq-item, .contact-info, .contact-form, .section-heading"
+    ".hero-text, .hero-visual, .about-photo, .about-text, .card, .step, .price-card, .testimonial, .faq-item, .contact-info, .contact-form, .section-heading"
   );
   revealTargets.forEach(function (el) {
     el.classList.add("reveal");
@@ -68,6 +70,36 @@
     });
   }
 
+  // ---------- Parallax on scroll ----------
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+
+  if (parallaxEls.length && !reducedMotion) {
+    var ticking = false;
+
+    function updateParallax() {
+      var viewportH = window.innerHeight;
+      parallaxEls.forEach(function (el) {
+        var speed = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+        var rect = el.getBoundingClientRect();
+        var centerOffset = rect.top + rect.height / 2 - viewportH / 2;
+        var translateY = centerOffset * speed * -1;
+        el.style.transform = "translateY(" + translateY.toFixed(1) + "px)";
+      });
+      ticking = false;
+    }
+
+    function requestParallaxUpdate() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", requestParallaxUpdate, { passive: true });
+    window.addEventListener("resize", requestParallaxUpdate);
+    requestParallaxUpdate();
+  }
+
   // ---------- FAQ accordion ----------
   document.querySelectorAll(".faq-question").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -86,7 +118,7 @@
     });
   });
 
-  // ---------- Contact form (client-side only demo) ----------
+  // ---------- Contact form (FormSubmit.co via AJAX) ----------
   var form = document.getElementById("contact-form");
   var status = document.getElementById("form-status");
 
@@ -100,9 +132,35 @@
         return;
       }
 
-      status.textContent = "Danke für Ihre Nachricht! Ich melde mich zeitnah bei Ihnen zurück.";
-      status.className = "form-status success";
-      form.reset();
+      var submitBtn = form.querySelector("button[type=submit]");
+      var actionUrl = form.getAttribute("action").replace(
+        "https://formsubmit.co/",
+        "https://formsubmit.co/ajax/"
+      );
+
+      submitBtn.disabled = true;
+      status.textContent = "Ihre Nachricht wird gesendet …";
+      status.className = "form-status";
+
+      fetch(actionUrl, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Versand fehlgeschlagen");
+          status.textContent = "Danke für Ihre Nachricht! Ich melde mich zeitnah bei Ihnen zurück.";
+          status.className = "form-status success";
+          form.reset();
+        })
+        .catch(function () {
+          status.textContent =
+            "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt per E-Mail.";
+          status.className = "form-status error";
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
     });
   }
 
