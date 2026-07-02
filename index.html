@@ -26,7 +26,7 @@
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<!-- Reusable decorative leaf branch (referenced via <use>) -->
+<!-- Reusable decorative shapes (referenced via <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="leaf-branch" viewBox="0 0 200 200">
     <path d="M20 185 C 55 150, 78 105, 98 20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -35,6 +35,13 @@
     <ellipse cx="82" cy="92" rx="16" ry="8" transform="rotate(-30 82 92)" stroke="currentColor" stroke-width="2.5" fill="none"/>
     <ellipse cx="92" cy="63" rx="14" ry="7" transform="rotate(-24 92 63)" stroke="currentColor" stroke-width="2.5" fill="none"/>
     <ellipse cx="98" cy="36" rx="12" ry="6" transform="rotate(-18 98 36)" stroke="currentColor" stroke-width="2.5" fill="none"/>
+  </symbol>
+  <symbol id="feather" viewBox="0 0 100 220">
+    <path d="M50 8 C 22 55, 18 100, 32 145 C 40 172, 46 192, 50 214" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M50 8 C 78 55, 82 100, 68 145 C 60 172, 54 192, 50 214" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M50 20 L50 205" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M50 40 L32 54 M50 60 L28 78 M50 80 L27 102 M50 100 L30 126 M50 120 L34 146 M50 140 L40 162" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M50 40 L68 54 M50 60 L72 78 M50 80 L73 102 M50 100 L70 126 M50 120 L66 146 M50 140 L60 162" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
   </symbol>
 </svg>
 
@@ -105,15 +112,12 @@
   <section class="section" id="ueber-mich">
     <div class="container about-inner">
       <div class="about-photo" data-parallax="0.06">
-        <div class="photo-frame">
-          <div class="frame-blob" aria-hidden="true"></div>
-          <div class="frame-dots" aria-hidden="true"></div>
-          <svg class="frame-leaf frame-leaf-a" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
-          <svg class="frame-leaf frame-leaf-b" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
-          <svg class="frame-leaf frame-leaf-c" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
-          <span class="photo-frame-caption">Persönliches Foto folgt in Kürze</span>
-        </div>
-        <svg class="floating-leaf leaf-3" data-parallax="0.2"><use href="#leaf-branch"/></svg>
+        <div class="frame-dots" aria-hidden="true"></div>
+        <svg class="frame-leaf frame-leaf-a" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
+        <svg class="frame-leaf frame-leaf-b" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
+        <svg class="frame-feather frame-feather-a" viewBox="0 0 100 220" aria-hidden="true"><use href="#feather"/></svg>
+        <svg class="frame-feather frame-feather-b" viewBox="0 0 100 220" aria-hidden="true"><use href="#feather"/></svg>
+        <span class="photo-frame-caption">Persönliches Foto folgt in Kürze</span>
       </div>
       <div class="about-text">
         <p class="eyebrow">Über mich</p>
