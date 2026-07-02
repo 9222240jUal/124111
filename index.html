@@ -51,7 +51,6 @@
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#preise">Preise</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#referenzen">Stimmen</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -111,7 +110,9 @@
     <div class="container about-inner">
       <div class="about-photo" data-parallax="0.06">
         <div class="photo-frame">
-          <img src="assets/logo-mark-cream.png" alt="Kuhring Stillberatung" class="photo-frame-logo">
+          <svg class="frame-leaf frame-leaf-a" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
+          <svg class="frame-leaf frame-leaf-b" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
+          <svg class="frame-leaf frame-leaf-c" viewBox="0 0 200 200" aria-hidden="true"><use href="#leaf-branch"/></svg>
           <span class="photo-frame-caption">Persönliches Foto folgt in Kürze</span>
         </div>
         <svg class="floating-leaf leaf-3" data-parallax="0.2"><use href="#leaf-branch"/></svg>
@@ -273,42 +274,14 @@
         </li>
       </ol>
     </div>
-  </section>
-
-  <!-- REFERENZEN -->
-  <section class="section" id="referenzen">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Stimmen</p>
-        <h2>Was Familien berichten</h2>
-      </div>
-
-      <div class="testimonial-grid">
-        <blockquote class="testimonial">
-          <p>„Frau Kuhring hat uns in den ersten schwierigen Wochen mit so viel Ruhe
-          und Fachwissen begleitet. Wir haben uns bei jedem Termin verstanden gefühlt.“</p>
-          <cite>— Beispielstimme, wird durch echtes Feedback ersetzt</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>„Dank der Beratung konnten wir unsere Stillprobleme lösen und haben
-          endlich wieder entspannte Mahlzeiten.“</p>
-          <cite>— Beispielstimme, wird durch echtes Feedback ersetzt</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>„Die Hausbesuche waren ein großes Geschenk – so konnten wir alles in
-          unserer gewohnten Umgebung besprechen.“</p>
-          <cite>— Beispielstimme, wird durch echtes Feedback ersetzt</cite>
-        </blockquote>
-      </div>
-    </div>
 
     <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,40 C 360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="var(--color-bg-alt)"/>
+      <path d="M0,60 C 400,0 1040,100 1440,30 L1440,100 L0,100 Z" fill="var(--color-bg)"/>
     </svg>
   </section>
 
   <!-- FAQ -->
-  <section class="section section-alt" id="faq">
+  <section class="section" id="faq">
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Häufige Fragen</p>
@@ -383,7 +356,7 @@
         </ul>
       </div>
 
-      <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@kuhring-stillberatung.de" method="POST" novalidate>
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@kuhring-stillberatung.de" method="POST">
         <input type="hidden" name="_subject" value="Neue Anfrage über die Website">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
@@ -414,7 +387,10 @@
         <button type="submit" class="btn btn-primary">
           <span class="btn-label">Nachricht senden</span>
         </button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-hint">
+          Ihre Nachricht geht direkt an info@kuhring-stillberatung.de. Nach dem
+          Absenden werden Sie kurz zu einer Bestätigungsseite weitergeleitet.
+        </p>
       </form>
     </div>
   </section>

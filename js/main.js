@@ -39,7 +39,7 @@
 
   // ---------- Scroll reveal animations ----------
   var revealTargets = document.querySelectorAll(
-    ".hero-text, .hero-visual, .about-photo, .about-text, .card, .step, .price-card, .testimonial, .faq-item, .contact-info, .contact-form, .section-heading"
+    ".hero-text, .hero-visual, .about-photo, .about-text, .card, .step, .price-card, .faq-item, .contact-info, .contact-form, .section-heading"
   );
   revealTargets.forEach(function (el) {
     el.classList.add("reveal");
@@ -118,49 +118,18 @@
     });
   });
 
-  // ---------- Contact form (FormSubmit.co via AJAX) ----------
+  // ---------- Contact form ----------
+  // Submits as a normal HTML form POST to FormSubmit.co (no fetch/CORS
+  // involved), so it works reliably regardless of where/how the page is
+  // opened. This just disables the button briefly for visual feedback
+  // while the browser navigates to FormSubmit's confirmation page.
   var form = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
-
   if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        status.textContent = "Bitte füllen Sie alle Pflichtfelder korrekt aus.";
-        status.className = "form-status error";
-        return;
-      }
-
+    form.addEventListener("submit", function () {
+      if (!form.checkValidity()) return;
       var submitBtn = form.querySelector("button[type=submit]");
-      var actionUrl = form.getAttribute("action").replace(
-        "https://formsubmit.co/",
-        "https://formsubmit.co/ajax/"
-      );
-
       submitBtn.disabled = true;
-      status.textContent = "Ihre Nachricht wird gesendet …";
-      status.className = "form-status";
-
-      fetch(actionUrl, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(form),
-      })
-        .then(function (response) {
-          if (!response.ok) throw new Error("Versand fehlgeschlagen");
-          status.textContent = "Danke für Ihre Nachricht! Ich melde mich zeitnah bei Ihnen zurück.";
-          status.className = "form-status success";
-          form.reset();
-        })
-        .catch(function () {
-          status.textContent =
-            "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt per E-Mail.";
-          status.className = "form-status error";
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-        });
+      submitBtn.querySelector(".btn-label").textContent = "Wird gesendet …";
     });
   }
 
