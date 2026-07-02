@@ -100,6 +100,21 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: var(--shadow-medium);
 }
 .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+.hero-actions .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(63, 107, 84, 0.45);
+  animation: btn-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes btn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(63, 107, 84, 0.45); }
+  70% { box-shadow: 0 0 0 16px rgba(63, 107, 84, 0); }
+  100% { box-shadow: 0 0 0 16px rgba(63, 107, 84, 0); }
+}
 .btn-secondary {
   background: transparent;
   color: var(--color-primary);
@@ -117,24 +132,24 @@ button { font-family: inherit; cursor: pointer; }
   width: 90px;
   height: 90px;
   color: var(--color-accent);
-  opacity: 0.35;
+  opacity: 0.45;
   pointer-events: none;
   z-index: 0;
-  animation: leaf-sway 7s ease-in-out infinite;
+  animation: leaf-sway 4.5s ease-in-out infinite;
 }
-.leaf-1 { top: 8%; left: 4%; width: 110px; height: 110px; animation-duration: 8s; }
-.leaf-2 { bottom: 6%; right: 6%; width: 130px; height: 130px; transform: scaleX(-1); animation-duration: 9.5s; animation-delay: 1s; }
-.leaf-3 { bottom: -30px; right: -30px; width: 90px; height: 90px; opacity: 0.4; animation-duration: 7.5s; }
-.leaf-price { top: -20px; left: -20px; width: 80px; height: 80px; opacity: 0.5; transform: rotate(20deg); }
+.leaf-1 { top: 8%; left: 4%; width: 110px; height: 110px; animation-duration: 5s; }
+.leaf-2 { bottom: 6%; right: 6%; width: 130px; height: 130px; animation-duration: 6s; animation-delay: 0.6s; }
+.leaf-3 { bottom: -30px; right: -30px; width: 90px; height: 90px; opacity: 0.5; animation-duration: 4.8s; }
+.leaf-price { top: -20px; left: -20px; width: 80px; height: 80px; opacity: 0.6; animation-duration: 5.4s; }
 
 @keyframes leaf-sway {
-  0%, 100% { transform: rotate(0deg) translateY(0); }
-  50% { transform: rotate(6deg) translateY(-10px); }
+  0%, 100% { transform: rotate(0deg) translateY(0) scale(1); }
+  50% { transform: rotate(14deg) translateY(-20px) scale(1.06); }
 }
 .leaf-2 { animation-name: leaf-sway-flip; }
 @keyframes leaf-sway-flip {
-  0%, 100% { transform: scaleX(-1) rotate(0deg) translateY(0); }
-  50% { transform: scaleX(-1) rotate(6deg) translateY(-10px); }
+  0%, 100% { transform: scaleX(-1) rotate(0deg) translateY(0) scale(1); }
+  50% { transform: scaleX(-1) rotate(14deg) translateY(-20px) scale(1.06); }
 }
 
 /* ---------- Header ---------- */
@@ -167,14 +182,15 @@ button { font-family: inherit; cursor: pointer; }
   height: 46px;
   width: auto;
   transition: transform var(--transition-base);
-  animation: logo-breathe 5s ease-in-out infinite;
+  animation: logo-breathe 3.2s ease-in-out infinite;
+  transform-origin: center;
 }
 .logo:hover .logo-img {
-  transform: scale(1.08) rotate(-3deg);
+  transform: scale(1.15) rotate(-6deg);
 }
 @keyframes logo-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.09) rotate(-2deg); }
 }
 .logo-text {
   font-family: var(--font-heading);
@@ -304,27 +320,44 @@ button { font-family: inherit; cursor: pointer; }
   height: 360px;
   background: linear-gradient(135deg, var(--color-accent-light), var(--color-primary-light));
   border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
-  opacity: 0.45;
-  animation: blob-morph 12s ease-in-out infinite, blob-float 8s ease-in-out infinite;
+  opacity: 0.55;
+  animation: blob-morph 6s ease-in-out infinite, blob-float 4.5s ease-in-out infinite;
 }
 .hero-logo {
   position: relative;
   width: min(400px, 85%);
   filter: drop-shadow(0 20px 35px rgba(63, 107, 84, 0.25));
-  animation: float-gentle 6s ease-in-out infinite;
+  animation: float-gentle 3.6s ease-in-out infinite;
 }
 
 @keyframes blob-morph {
   0%, 100% { border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%; }
-  50% { border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%; }
+  50% { border-radius: 40% 60% 35% 65% / 65% 35% 65% 35%; }
 }
 @keyframes blob-float {
   0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-16px) scale(1.03); }
+  50% { transform: translateY(-26px) scale(1.07); }
 }
 @keyframes float-gentle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(-1.5deg); }
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  color: var(--color-primary);
+  opacity: 0.7;
+  z-index: 1;
+  animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+  transition: opacity var(--transition-base), color var(--transition-base);
+}
+.scroll-cue:hover { opacity: 1; color: var(--color-accent); }
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
 }
 
 /* Wave dividers between sections */
@@ -351,12 +384,12 @@ section[id] { scroll-margin-top: 90px; }
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(44px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* ---------- About ---------- */
