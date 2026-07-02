@@ -6,10 +6,13 @@ nötig.
 
 ## Struktur
 
-- `index.html` – Startseite (Hero, Über mich, Leistungen, Ablauf, Stimmen, FAQ, Kontakt)
+- `index.html` – Startseite (Hero, Über mich, Leistungen, Preise, Ablauf, Stimmen, FAQ, Kontakt)
 - `impressum.html`, `datenschutz.html` – rechtliche Seiten (Platzhaltertexte, müssen vor Veröffentlichung ersetzt werden)
 - `css/style.css` – Styles
-- `js/main.js` – mobiles Menü, Scroll-Animationen, FAQ-Akkordeon, Kontaktformular (Client-seitig, ohne Backend)
+- `js/main.js` – mobiles Menü, Scroll-/Parallax-Animationen, FAQ-Akkordeon, Kontaktformular
+- `assets/` – Logo (Icon- und Vollversion, aus dem Instagram-Auftritt extrahiert und freigestellt)
+- `kuhring-stillberatung-single.html` – **Alles-in-einer-Datei-Version**: CSS, JS und Logos sind inline eingebettet, Impressum/Datenschutz sind Abschnitte auf derselben Seite. Ideal zum einfachen Hochladen/Weitergeben ohne Ordnerstruktur.
+- `build-single-file.py` – erzeugt `kuhring-stillberatung-single.html` neu aus den Quelldateien (`python3 build-single-file.py` nach Änderungen ausführen)
 
 ## Lokal ansehen
 
@@ -21,8 +24,8 @@ Danach `http://localhost:8000` im Browser öffnen.
 
 ## Vor dem Livegang anpassen
 
-- Echte Kontaktdaten, Adresse und Öffnungszeiten in `index.html` (Abschnitt `#kontakt`) sowie im Impressum eintragen
-- Platzhaltertexte in `impressum.html` und `datenschutz.html` durch rechtsgeprüfte Inhalte ersetzen
-- Foto von Birgit Kuhring anstelle des Platzhalter-Kreises einbinden (`.hero-photo-placeholder`, `.photo-frame`)
+- Echte Adresse und Öffnungszeiten in `index.html` (Abschnitt `#kontakt`) sowie im Impressum eintragen (Telefon, E-Mail und Instagram sind bereits echt hinterlegt)
+- Platzhaltertexte in `impressum.html` / `datenschutz.html` (bzw. den entsprechenden Abschnitten in der Single-File-Version) durch rechtsgeprüfte Inhalte ersetzen
+- Echtes Foto von Birgit Kuhring anstelle des „BK“-Platzhalters einbinden (`.photo-frame` im Abschnitt „Über mich“)
 - Beispiel-Testimonials durch echtes Kundenfeedback ersetzen
-- Kontaktformular an ein Backend oder einen Formular-Dienst (z. B. Formspree) anbinden, damit Nachrichten tatsächlich ankommen
+- Das Kontaktformular sendet bereits per FormSubmit.co an `info@kuhring-stillberatung.de`. **Beim ersten eingehenden Testformular schickt FormSubmit eine Bestätigungsmail an diese Adresse – der Link darin muss einmal angeklickt werden**, sonst kommen keine weiteren Nachrichten an.

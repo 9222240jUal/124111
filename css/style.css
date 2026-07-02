@@ -337,6 +337,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ---------- Sections ---------- */
+section[id] { scroll-margin-top: 90px; }
 .section { padding: 96px 0; position: relative; overflow: hidden; }
 .section-alt { background: var(--color-bg-alt); }
 .section-heading {
@@ -729,6 +730,9 @@ button { font-family: inherit; cursor: pointer; }
   padding: 120px 0 96px;
   max-width: 780px;
   margin: 0 auto;
+}
+.legal-section .legal-page {
+  padding: 0;
 }
 .legal-page h1 { margin-bottom: 24px; }
 .legal-page h2 { font-size: 1.2rem; margin-top: 36px; }
