@@ -407,14 +407,43 @@ section[id] { scroll-margin-top: 90px; }
   background: linear-gradient(160deg, var(--color-primary), var(--color-primary-light));
   color: var(--color-bg);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 18px;
+  padding: 32px;
   box-shadow: var(--shadow-medium);
   transition: transform var(--transition-base);
   position: relative;
+  overflow: hidden;
   z-index: 1;
 }
-.photo-frame-initials { font-family: var(--font-heading); font-size: 4rem; }
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
+  animation: photo-frame-glow 6s ease-in-out infinite;
+}
+@keyframes photo-frame-glow {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.15) translate(3%, -3%); }
+}
+.photo-frame-logo {
+  width: 62%;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
+  animation: float-gentle 5s ease-in-out infinite;
+}
+.photo-frame-caption {
+  position: relative;
+  z-index: 1;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  opacity: 0.8;
+  text-align: center;
+}
 .about-photo:hover .photo-frame { transform: scale(1.02) rotate(-1deg); }
 .about-facts {
   margin-top: 20px;
