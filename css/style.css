@@ -404,8 +404,9 @@ section[id] { scroll-margin-top: 90px; }
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-light));
-  color: var(--color-bg);
+  background: var(--color-white);
+  border: 1.5px solid rgba(63, 107, 84, 0.1);
+  color: var(--color-text-muted);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -417,47 +418,68 @@ section[id] { scroll-margin-top: 90px; }
   overflow: hidden;
   z-index: 1;
 }
-.photo-frame::before {
-  content: "";
+.frame-blob {
   position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
-  animation: photo-frame-glow 6s ease-in-out infinite;
+  top: -12%;
+  right: -18%;
+  width: 65%;
+  aspect-ratio: 1;
+  background: linear-gradient(155deg, var(--color-accent-light), var(--color-bg-alt));
+  border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
+  opacity: 0.8;
+  animation: blob-morph 9s ease-in-out infinite, blob-float 7s ease-in-out infinite;
 }
-@keyframes photo-frame-glow {
-  0%, 100% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.15) translate(3%, -3%); }
+.frame-dots {
+  position: absolute;
+  bottom: 14%;
+  left: 10%;
+  width: 70px;
+  height: 70px;
+  background-image: radial-gradient(var(--color-accent) 2.5px, transparent 2.5px);
+  background-size: 14px 14px;
+  opacity: 0.5;
+}
+.frame-ring {
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2.5px solid var(--color-accent);
+  opacity: 0.5;
 }
 .frame-leaf {
   position: absolute;
-  color: var(--color-bg);
+  color: var(--color-primary);
   pointer-events: none;
 }
 .frame-leaf-a {
-  width: 130px;
-  height: 130px;
-  top: 8%;
+  width: 120px;
+  height: 120px;
+  top: 14%;
   left: 50%;
-  margin-left: -65px;
-  opacity: 0.95;
+  margin-left: -60px;
+  opacity: 0.8;
   animation: leaf-sway 5.5s ease-in-out infinite;
 }
 .frame-leaf-b {
-  width: 100px;
-  height: 100px;
-  bottom: 16%;
-  left: 8%;
-  opacity: 0.5;
-  animation: leaf-sway 6.5s ease-in-out infinite;
+  width: 95px;
+  height: 95px;
+  bottom: 20%;
+  right: 10%;
+  opacity: 0.55;
+  color: var(--color-accent);
+  animation: leaf-sway-flip 6.5s ease-in-out infinite;
   animation-delay: 0.5s;
 }
 .frame-leaf-c {
-  width: 110px;
-  height: 110px;
-  bottom: 8%;
-  right: 4%;
-  opacity: 0.65;
-  animation: leaf-sway-flip 6s ease-in-out infinite;
+  width: 80px;
+  height: 80px;
+  bottom: 30%;
+  left: 14%;
+  opacity: 0.4;
+  animation: leaf-sway 6s ease-in-out infinite;
   animation-delay: 0.9s;
 }
 .photo-frame-caption {
